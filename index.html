@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./assets/style/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <title>SneakerBlind</title>
+</head>
+<body>
+
+  <!--HEADER-->
+
+  <header class="header">
+      <a href="./index.html" class="logo"><h1>SneakerBlind</h1></a>
+      <div class="mybtn"><a href="#" class="btn">fazer login<ion-icon name="log-in-outline" class="login-icon"></ion-icon></a>
+        <a href="#" class="sign-up">ou crie uma conta</a>
+      </div>      
+
+      <!--NAVBAR-->
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="#main-container">home</a></li>
+          <li><a href="#">about</a></li>
+          <li class="dropdown"><a href="#">contact</a>
+            <ul class="dropdown-content">
+              <li><a href="https://www.instagram.com/7samuca7/" target="_blank">instagram</a></li>
+              <li><a href="https://github.com/samluiz" target="_blank">github</a></li>
+              <li><a href="https://www.linkedin.com/in/samuelluizrl/" target="_blank">linkedin</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+  </header>
+
+  <!--MAIN CONTAINER-->
+
+  <main class="main-container" id="main-container">
+    <div class="grid">
+      <div class="product">
+        <img src="./assets/img/product1.png" class="product-img"><span class="product-desc">AIR JORDAN 4</span>
+      </div>
+      <div class="product"><img src="./assets/img/product2.png" class="product-img"><span class="product-desc">AIR JORDAN 1</span></div>
+      <div class="product"><img src="./assets/img/product3.png" class="product-img"><span class="product-desc">AIR JORDAN 2</span></div>
+      <div class="product"><img src="./assets/img/product4.png" class="product-img"><span class="product-desc">AIR JORDAN 11</span></div>
+      <div class="product"><img src="./assets/img/product5.png" class="product-img"><span class="product-desc">AIR JORDAN 7</span></div>
+      <div class="product"><img src="./assets/img/product6.png" class="product-img"><span class="product-desc">AIR JORDAN 10</span></div>
+    </div>
+
+<!--SCROLL DOWN ARROWS-->
+
+    <div id="arrow">
+      <a href="#container" id="arrow-left"><lottie-player src="https://assets1.lottiefiles.com/packages/lf20_hnvzkcfr.json" mode="bounce" background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player></a>
+      <a href="#container" id="arrow-right"><lottie-player src="https://assets1.lottiefiles.com/packages/lf20_hnvzkcfr.json" mode="bounce" background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player></a>
+    </div>  
+  </main>
+
+  <!--SECOND CONTAINER-->
+
+  <section class="container" id="container">
+
+  </section>
+
+  
+  <script type="text/javascript" src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+</html>
