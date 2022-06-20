@@ -52,19 +52,16 @@ h1 {
 }
 
 .mybtn {
-  position: absolute;
-  left: 1rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.mybtn {
   display: grid;
   place-items: center;
   border-top: none;
   border-right: none;
   border-left: none;
   border-bottom: none;
+  position: absolute;
+  left: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .btn {
@@ -162,20 +159,137 @@ h1 {
   place-items: center;
 }
 
-@media (max-width: 480px) {
+/* for desktops */
+@media only screen 
+  and (min-width: 1367px) { 
+   
+}
+
+/* for laptops */
+@media only screen 
+  and (min-width: 991px) 
+  and (max-width: 1366px) { 
+    #arrow-left, #arrow-right {
+      display: none;
+    }
+} 
+
+/* for large tablets */
+@media only screen 
+  and (min-width: 769px) 
+  and (max-width: 990px) { 
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .mybtn {
+      display: block;
+      left: 0%;
+      width: 50%;
+      height: 30%;
+    }
+  
+    .login-icon {
+      display: none;
+    }
+  
+    .navbar {
+      display: none;
+    }
+
+    #arrow-left, #arrow-right {
+      display: none;
+    }
+} 
+
+/* for smaller tablets */
+@media only screen 
+  and (min-width: 481px) 
+  and (max-width: 768px) { 
+    .grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    .mybtn {
+      display: block;
+      left: 0%;
+      width: 50%;
+      height: 30%;
+    }
+  
+    .login-icon {
+      display: none;
+    }
+  
+    .navbar {
+      display: none;
+    }
+
+    #arrow-left, #arrow-right {
+      display: none;
+    }
+} 
+
+/* for cellphones */
+@media only screen 
+  and (min-width: 375px) and (max-width: 480px) { 
+    .grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    h1 {
+      font-size: 18px;
+    }
+  
+    .mybtn {
+      display: block;
+      left: 0%;
+      width: 50%;
+      height: 30%;
+    }
+  
+    .login-icon {
+      display: none;
+    }
+  
+    .navbar {
+      display: none;
+    }
+
+    #arrow-left, #arrow-right {
+      display: none;
+    }
+} 
+
+@media only screen and (max-width: 375px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .header {
-    justify-content: flex-start;
-    align-items: baseline;
+  h1 {
+    font-size: 18px;
+  }
+
+  .mybtn {
+    display: none;
+  }
+
+  .login-icon {
+    display: none;
   }
 
   .navbar {
     display: none;
   }
+
+  #arrow-left, #arrow-right {
+    display: none;
   }
+}
 
 .product {
   display: flex;
