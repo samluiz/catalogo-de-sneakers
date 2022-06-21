@@ -2,9 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: white;
   font-family: var(--main-font);
-  background: var(--main-color);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -21,6 +19,10 @@ body::-webkit-scrollbar {
 
 html {
   scroll-behavior: smooth;
+}
+
+body, html {
+  background: var(--main-color);
 }
 
 a {
@@ -45,19 +47,23 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
   width: 100%;
   position: fixed;
   z-index: 999999999;
+  background: black;
+}
+
+.icon {
+  position: absolute;
+  right: 2rem;
+  bottom: 1rem;
 }
 
 .mybtn {
   display: grid;
   place-items: center;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-bottom: none;
+  border: none;
   position: absolute;
   left: 1rem;
   cursor: pointer;
@@ -83,6 +89,11 @@ h1 {
   margin-left: 0.8rem;
 }
 
+.login-icon:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
 .sign-up {
   position: absolute;
   font-size: 0.625rem;
@@ -104,15 +115,18 @@ h1 {
 .navbar {
   position: absolute;
   right: 0.625rem;
+  background-color: black;
 }
 
 .navbar > ul > li {
   float: left;
+  background-color: black;
 }
 
 .navbar > ul > li > a {
   padding: 0.5rem;
   margin: 1rem;
+  background-color: black;
 }
 
 .navbar > ul > li > a:hover, h1:hover, span:hover {
@@ -127,11 +141,12 @@ h1 {
 .dropdown-content {
   position: absolute;
   right: 0.625rem;
-  display: none;
+  visibility: hidden;
+  background-color: black;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  visibility: visible;
 }
 
 .dropdown-content > li {
@@ -146,22 +161,29 @@ h1 {
 .main-container {
   background: rgb(0, 0, 0);
   min-height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 6rem;
+  column-gap: 4rem;
   place-items: center;
+
 }
 
 /* for desktops */
 @media only screen 
   and (min-width: 1367px) { 
+
+    .icon {
+      display: none;
+    }
    
 }
 
@@ -172,6 +194,14 @@ h1 {
     #arrow-left, #arrow-right {
       display: none;
     }
+
+    .icon {
+      display: none;
+    }
+
+    .grid {
+      gap: 1rem;
+    }
 } 
 
 /* for large tablets */
@@ -180,6 +210,7 @@ h1 {
   and (max-width: 990px) { 
     .grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
   
     .mybtn {
@@ -188,18 +219,24 @@ h1 {
       width: 50%;
       height: 30%;
     }
-  
-    .login-icon {
-      display: none;
-    }
-  
-    .navbar {
-      display: none;
-    }
 
     #arrow-left, #arrow-right {
       display: none;
     }
+
+    .navbar > ul > li > a {
+      padding: 0.4rem;
+      margin: 0.4rem;
+    }
+
+    .icon {
+      display: none;
+    }
+
+    .shoe-img {
+      display: none;
+    }
+    
 } 
 
 /* for smaller tablets */
@@ -224,13 +261,42 @@ h1 {
     .login-icon {
       display: none;
     }
-  
-    .navbar {
-      display: none;
-    }
 
     #arrow-left, #arrow-right {
       display: none;
+    }
+
+    .navbar {
+      top: 2.5rem;
+      right: 0;
+      width: 100%;
+    }
+
+    .navbar ul {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 100%;
+    }
+
+    .navbar ul li {
+      padding-top: 0.625rem;
+      display: none;
+    }
+
+    .sign-up {
+      display: none;
+    }
+
+    .historia {
+      font-size: 12px;
+    }
+    .shoe-img {
+      display: none;
+    }
+
+    .NavbarToggle {
+      display: flex;
     }
 } 
 
@@ -255,13 +321,39 @@ h1 {
     .login-icon {
       display: none;
     }
-  
-    .navbar {
-      display: none;
-    }
 
     #arrow-left, #arrow-right {
       display: none;
+    }
+
+    .navbar {
+      top: 2.5rem;
+      right: 0;
+      width: 100%;
+      display: none;
+    }
+
+    .navbar ul {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 100%;
+    }
+
+    .navbar ul li {
+      padding-top: 0.625rem;
+    }
+
+    .sign-up {
+      display: none;
+    }
+
+    .shoe-img {
+      display: none;
+    }
+
+    .historia {
+      font-size: 12px;
     }
 } 
 
@@ -275,19 +367,47 @@ h1 {
   }
 
   .mybtn {
-    display: none;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
   }
 
   .login-icon {
     display: none;
   }
 
-  .navbar {
+  #arrow-left, #arrow-right {
     display: none;
   }
 
-  #arrow-left, #arrow-right {
+  .navbar {
+    top: 2.5rem;
+    right: 0;
+    width: 100%;
     display: none;
+  }
+
+  .navbar ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 100%;
+  }
+
+  .navbar ul li {
+    padding-top: 0.625rem;
+  }
+
+  .sign-up {
+    display: none;
+  }
+
+  .shoe-img {
+    display: none;
+  }
+
+  .historia {
+    font-size: 10px;
   }
 }
 
@@ -296,10 +416,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
   border-bottom: 1px solid white;
-  grid-column-start: auto;
-  grid-row-start: auto;
 }
 
 .product-img {
@@ -357,8 +474,101 @@ h1 {
 }
 
 .container {
-  min-height: calc(100vh - 4.25rem);
+  min-height: 100vh;
   display: grid;
   place-items: center;
-  background: rgb(55, 55, 55);
+  background: rgb(150, 150, 150);
+  position: relative;
+}
+
+.container-2 {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: rgb(0, 0, 0);
+  z-index: 0;
+  position: relative;
+  color: white;
+}
+
+.shoe-img {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 60%;
+  height: 80%;
+}
+
+.jordan {
+  width: 18.75rem;
+  height: 18.75rem;
+  transition: filter 2s ease-in-out;
+}
+
+.jordan:hover {
+  filter: invert(100%);
+  cursor: pointer;
+}
+
+.jordan:active {
+  transform: scale(1.07);
+}
+
+.historia {
+  position: absolute;
+  left: 3.125rem;
+  top: 6.25rem;
+  width: 50%;
+}
+
+.footer {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  min-height: calc(100vh - 4.25rem);
+  position: relative;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(autofit, minmax(3, 1fr));
+  grid-auto-rows: auto;
+  grid-auto-flow: column;
+}
+
+.footer p {
+  position: absolute;
+  bottom: 0.625rem;
+}
+
+
+#github {
+  width: 30%;
+  height: 30%;
+  transition-duration: 0.2s;
+}
+
+#instagram {
+  width: 30%;
+  height: 30%;
+  transition-duration: 0.2s;
+}
+
+#linkedin {
+  width: 30%;
+  height: 30%;
+  transition-duration: 0.2s;
+}
+
+#github:hover, #instagram:hover, #linkedin:hover {
+  transform: scale(1.1);
+}
+
+path {
+  transition-duration: 0.2s;
+}
+
+path:hover {
+  filter: invert(20%);
+}
+
+path:active {
+  transform: scaleY(0.95);
 }
