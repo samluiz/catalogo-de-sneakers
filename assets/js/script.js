@@ -1,7 +1,11 @@
-function classToggle() {
-  const navs = document.querySelectorAll('.navbar')
+const btn = document.querySelector('#hamburger')
+const navbar = document.querySelector('#navbar')
 
-  navs.forEach(nav => nav.classList.toggle('NavbarToggle'))
-}
-
-document.querySelector('hamburger').addEventListener('click', classToggle)
+btn.addEventListener('click', function toggle(){
+  if (navbar.style.display == "none") {
+    navbar.style.display = "block"
+  }
+  else {
+    navbar.style.display = "none"
+  }
+})

@@ -129,7 +129,7 @@ h1 {
   background-color: black;
 }
 
-.navbar > ul > li > a:hover, h1:hover, span:hover {
+.navbar > ul > li > a:hover, h1:hover, .product-desc:hover {
   color: var(--hover-color);
   cursor: pointer;
 }
@@ -140,13 +140,12 @@ h1 {
 
 .dropdown-content {
   position: absolute;
-  right: 0.625rem;
-  visibility: hidden;
+  display: none;
   background-color: black;
 }
 
 .dropdown:hover .dropdown-content {
-  visibility: visible;
+  display: block;
 }
 
 .dropdown-content > li {
@@ -237,6 +236,7 @@ h1 {
       display: none;
     }
     
+    
 } 
 
 /* for smaller tablets */
@@ -270,6 +270,7 @@ h1 {
       top: 2.5rem;
       right: 0;
       width: 100%;
+      display: none
     }
 
     .navbar ul {
@@ -281,7 +282,6 @@ h1 {
 
     .navbar ul li {
       padding-top: 0.625rem;
-      display: none;
     }
 
     .sign-up {
@@ -293,10 +293,6 @@ h1 {
     }
     .shoe-img {
       display: none;
-    }
-
-    .NavbarToggle {
-      display: flex;
     }
 } 
 
@@ -436,7 +432,7 @@ h1 {
   transform: scale(1.07);
 }
 
-.product > span {
+.product > .product-desc {
   margin-bottom: 0.5rem;
 }
 
