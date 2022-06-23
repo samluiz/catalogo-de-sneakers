@@ -1,5 +1,14 @@
 # PRODUCT CATALOG
-Catálogo de produtos usando:
+Catálogo de produtos responsivo usando:
+
+- Grid
+- Flex
+- Media Queries
+- Javascript DOM manipulation
+
+-----------------------------------------------
+
+Responsive product catalog using:
 
 - Grid
 - Flex
